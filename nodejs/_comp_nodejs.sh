@@ -1,44 +1,38 @@
-#!/bin/bash
-
 ################################################################################
-# Title: Node.js completion script
+# Bash completion for nodejs
+#
+# Copyright (C) 2020  Red Cursor
+#
 # Author: Shakiba Moshiri
-# Date: 20XX
+# Project: btc (Bash Tab Completion)
+# Source: github.com/redcursor
 ################################################################################
 
-################################################################################
-# generate an array of all -- options
-################################################################################
-cmd_name='nodejs';
-which $cmd_name 1> /dev/null 2>&1;
-if [[ $? != 0 ]]; then
-    echo "$cmd_name has been installed";
-    exit;
-fi
-cmd_flags=($(egrep -o '\-\-[a-z0-9-]+=?' <($cmd_name --help)));
+cmd_name='nodejs';  # $1
+current_arg='';     # $2
+previous_arg='';    # $3
 
+cmd_long_opt=($(egrep -o '\-\-[a-z0-9-]+=?' <($cmd_name --help 2>&1)));
 
-################################################################################
-# main function which invoked by "complete -F"
-################################################################################
-comp () {
-    C_FLAG=${COMP_WORDS[$COMP_CWORD]};
-    P_FLAG=${COMP_WORDS[$COMP_CWORD-1]};
+_comp_nodejs () {
+    current_arg=${COMP_WORDS[$COMP_CWORD]};
+    previous_arg=${COMP_WORDS[$COMP_CWORD-1]};
 
-    case ${P_FLAG} in
-        --movejj )
-            COMPREPLY=(yes no 0);
+    case ${previous_arg} in
+        --print )
+            # there are examples
+            COMPREPLY=("1. 'console.log(\"hi\")'" "2. 'console.log(process.argv)'");
         ;;
     esac
     
-    case ${C_FLAG} in
+    case ${current_arg} in
         --[a-z]* )
-            COMPREPLY=( $(egrep -o "${C_FLAG//-/\\-}[^ ]+" <<< ${cmd_flags[@]}) );
+            COMPREPLY=( $(egrep -o "${current_arg//-/\\-}[^ ]+" <<< ${cmd_long_opt[@]}) );
         ;;
         - | -- )
-            COMPREPLY=(${cmd_flags[@]});
+            COMPREPLY=(${cmd_long_opt[@]});
         ;;
     esac
 }
 
-complete -o bashdefault -o default -F comp nodejs
+complete -o bashdefault -o default -F _comp_nodejs $cmd_name;
