@@ -1,21 +1,24 @@
-#!/bin/bash
-
 ################################################################################
-# Title: curly completion script
+# Bash completion for clamscan
+#
+# Copyright (C) 2020  Red Cursor
+#
 # Author: Shakiba Moshiri
-# Date: 20XX
+# Project: btc (Bash Tab Completion)
+# Source: github.com/redcursor
 ################################################################################
 
-cmd_long_opt=$(egrep -o '\-\-[a-z-]+=?' <(clamscan));
+cmd_name='clamscan';    # $1
+current_arg='';         # $2
+previous_arg='';        # $3
 
-################################################################################
-# main function which invoked by "complete -F"
-################################################################################
+cmd_long_opt=$(egrep -o '\-\-[a-z-]+=?' <($cmd_name --help 2>&1));
+
 _comp_clamscan () {
-    C_FLAG=${COMP_WORDS[$COMP_CWORD]};
-    P_FLAG=${COMP_WORDS[$COMP_CWORD-1]};
+    current_arg=${COMP_WORDS[$COMP_CWORD]};
+    previous_arg=${COMP_WORDS[$COMP_CWORD-1]};
 
-    case ${P_FLAG} in
+    case ${previous_arg} in
         --alert-* | \
         --scan-*  | \
         --leave-temps | \
@@ -37,7 +40,7 @@ _comp_clamscan () {
         --normalize )
 
             COMPREPLY=(yes no '*');
-            case ${C_FLAG} in
+            case ${current_arg} in
                 y )
                     COMPREPLY=(yes)
                 ;;
@@ -54,9 +57,9 @@ _comp_clamscan () {
         ;;
     esac
     
-    case ${C_FLAG} in
+    case ${current_arg} in
         --[a-z]* )
-            COMPREPLY=( $(egrep -o "${C_FLAG//-/\\-}[^ ]+" <<< ${cmd_long_opt[@]}) );
+            COMPREPLY=( $(egrep -o "${current_arg//-/\\-}[^ ]+" <<< ${cmd_long_opt[@]}) );
         ;;
         - | -- )
             COMPREPLY=(${cmd_long_opt[@]});
