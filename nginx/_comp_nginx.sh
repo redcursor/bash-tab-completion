@@ -14,8 +14,9 @@ previous_arg='';    # $3
 
 _s_value=(stop quit reopen reload);
 
-cmd_short_opt=$(egrep -o '\-[a-z-]+=?' <($cmd_name -h 2>&1));
-cmd_long_opt=$(egrep -o '\-\-[a-z-]+=?' <($cmd_name -h 2>&1));
+nginx_path=$(which nginx);
+nginx_short_opt=$(egrep -o '\-[a-z-]+=?' <($nginx_path -h 2>&1));
+nginx_long_opt=$(egrep -o '\-\-[a-z-]+=?' <($nginx_path -h 2>&1));
 
 _s_comp () {
     case $1 in
@@ -44,7 +45,7 @@ _comp_nginx () {
             COMPREPLY=($current_arg);
         ;;
         - | -- )
-            COMPREPLY=(${cmd_short_opt[@]});
+            COMPREPLY=(${nginx_short_opt[@]});
         ;;
     esac
 }

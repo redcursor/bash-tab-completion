@@ -12,7 +12,8 @@ cmd_name='clamscan';    # $1
 current_arg='';         # $2
 previous_arg='';        # $3
 
-cmd_long_opt=$(egrep -o '\-\-[a-z-]+=?' <($cmd_name --help 2>&1));
+clam_path=$(which clamscan);
+clam_long_opt=$(egrep -o '\-\-[a-z-]+=?' <($clam_path --help 2>&1));
 
 _comp_clamscan () {
     current_arg=${COMP_WORDS[$COMP_CWORD]};
@@ -59,10 +60,10 @@ _comp_clamscan () {
     
     case ${current_arg} in
         --[a-z]* )
-            COMPREPLY=( $(egrep -o "${current_arg//-/\\-}[^ ]+" <<< ${cmd_long_opt[@]}) );
+            COMPREPLY=( $(egrep -o "${current_arg//-/\\-}[^ ]+" <<< ${clam_long_opt[@]}) );
         ;;
         - | -- )
-            COMPREPLY=(${cmd_long_opt[@]});
+            COMPREPLY=(${clam_long_opt[@]});
         ;;
     esac
 }
