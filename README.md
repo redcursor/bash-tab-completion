@@ -19,3 +19,9 @@ Add `.sh` files into the `/etc/bash_completion.d/` directory and fresh your shel
 
 0 directories, 7 files
 ```
+
+### Scripts 
+
+ - [clamscan](https://raw.githubusercontent.com/redcursor/btc/master/clamscan/_comp_clamscan.sh)
+ - [nginx](https://raw.githubusercontent.com/redcursor/btc/master/nginx/_comp_nginx.sh)
+ - [nodejs](https://raw.githubusercontent.com/redcursor/btc/master/nodejs/_comp_nodejs.sh)
