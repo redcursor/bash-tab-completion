@@ -20,10 +20,10 @@ Add `.sh` files into the `/etc/bash_completion.d/` directory and fresh your shel
 0 directories, 7 files
 ```
 Or all `.sh` once at all.
- 1. `ct /tmp`
+ 1. `cd /tmp`
  2. `git clone https://github.com/redcursor/btc.git`
  3. `find btc -type f -name \*.sh  | sudo xargs -I xxx mv xxx /etc/bash_completion.d/`
- 4. clone your session (terminal) and open it up again
+ 4. close your session (terminal) and open it up again
 
 ### Scripts 
 
