@@ -24,6 +24,32 @@ Or all `.sh` once at all.
  2. `git clone https://github.com/redcursor/btc.git`
  3. `find btc -type f -name \*.sh  | sudo xargs -I xxx mv xxx /etc/bash_completion.d/`
  4. close your session (terminal) and open it up again
+ 
+ 
+ ### how to enable Tab Completion
+ 
+ 
+ ```bash
+>>> shopt -s
+checkwinsize   	on
+cmdhist        	on
+complete_fullquote	on
+expand_aliases 	on
+extglob        	on
+extquote       	on
+force_fignore  	on
+histappend     	on
+interactive_comments	on
+progcomp       	on              # this should be on
+promptvars     	on
+sourcepath     	on
+ ```
+
+if `progcomp` is not **on** turn it on;
+
+```bash
+>>> shopt -s progcomp
+```
 
 ### Scripts 
 
