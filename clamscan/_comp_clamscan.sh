@@ -16,6 +16,7 @@ clam_path=$(which clamscan);
 clam_long_opt=$(egrep -o '\-\-[a-z-]+=?' <($clam_path --help 2>&1));
 
 _comp_clamscan () {
+    COMP_WORDBREAKS=${COMP_WORDBREAKS/=/}
     current_arg=${COMP_WORDS[$COMP_CWORD]};
     previous_arg=${COMP_WORDS[$COMP_CWORD-1]};
 
@@ -53,8 +54,9 @@ _comp_clamscan () {
                 ;;
             esac
         ;;
-        --move= )
-            COMPREPLY=(yes no 0);
+        '--move=' )
+            # all_dirs=$(compgen -d);
+            # COMPREPLY=( $(egrep -o "$current_arg.+" <<< ${all_dirs[@]}) );
         ;;
     esac
     
