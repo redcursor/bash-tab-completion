@@ -56,3 +56,6 @@ if `progcomp` is not **on** turn it on;
  - [clamscan](https://raw.githubusercontent.com/redcursor/btc/master/clamscan/_comp_clamscan.sh)
  - [nginx](https://raw.githubusercontent.com/redcursor/btc/master/nginx/_comp_nginx.sh)
  - [nodejs](https://raw.githubusercontent.com/redcursor/btc/master/nodejs/_comp_nodejs.sh)
+ - [xargs](https://raw.githubusercontent.com/redcursor/btc/master/xargs/_comp_xargs.sh)
+ - [curly](https://raw.githubusercontent.com/redcursor/btc/master/curly/_comp_curly.sh)
+ - [certbot](https://raw.githubusercontent.com/redcursor/btc/master/certbot/_comp_certbot.sh)
