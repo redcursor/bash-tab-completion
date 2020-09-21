@@ -35,7 +35,7 @@ _comp_certbot () {
             COMPREPLY=($current_arg);
         ;;
         --[a-zA-Z0-9]* )
-            COMPREPLY=( $(perl -lne '/--[^ ]+/ && print $&' <<< ${certbot_long_opt[@]}) );
+            COMPREPLY=( $(egrep -o "${current_arg//-/\\-}[^ ]+" <<< ${certbot_long_opt[@]}) );
         ;;
         - )
             COMPREPLY=(${certbot_short_opt[@]});
