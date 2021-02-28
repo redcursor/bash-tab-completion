@@ -53,12 +53,18 @@ if `progcomp` is not **on** turn it on;
 
 ### Scripts and link for raw code
 
- - [clamscan](https://raw.githubusercontent.com/redcursor/btc/master/clamscan/_comp_clamscan.sh)
- - [nginx](https://raw.githubusercontent.com/redcursor/btc/master/nginx/_comp_nginx.sh)
- - [nodejs](https://raw.githubusercontent.com/redcursor/btc/master/nodejs/_comp_nodejs.sh)
- - [xargs](https://raw.githubusercontent.com/redcursor/btc/master/xargs/_comp_xargs.sh)
- - [curly](https://raw.githubusercontent.com/redcursor/btc/master/curly/_comp_curly.sh)
- - [certbot](https://raw.githubusercontent.com/redcursor/btc/master/certbot/_comp_certbot.sh)
- - [ldc](https://github.com/k-five/ldc) **Linux Docker Configuration**
+ - [clamscan](https://www.clamav.net/downloads) *Clam AntiVirus is an open source (GPLv2) anti-virus toolkit, ...*
+     - `source <(curl -sL https://raw.githubusercontent.com/redcursor/btc/master/clamscan/_comp_clamscan.sh)`
+ - [nginx](http://nginx.org/) *HTTP and reverse proxy server, mail proxy server*
+     - `source <(curl -sL https://raw.githubusercontent.com/redcursor/btc/master/nginx/_comp_nginx.sh)`
+ - [nodejs](https://nodejs.org/) *JavaScript runtime environment*
+     - `source <(curl -sL https://raw.githubusercontent.com/redcursor/btc/master/nodejs/_comp_nodejs.sh)`
+ - xargs *build and execute command lines from standard input*
+     - `source <(curl -sL https://raw.githubusercontent.com/redcursor/btc/master/xargs/_comp_xargs.sh)`
+ - [curly](https://github.com/k-five/curly) *Speak curl for faster troubleshooting*
+     - `source <(curl -sL https://raw.githubusercontent.com/redcursor/btc/master/curly/_comp_curly.sh)`
+ - [certbot](https://certbot.eff.org/) *EFF project to HTTPS every website*
+     - `source <(curl -sL https://raw.githubusercontent.com/redcursor/btc/master/certbot/_comp_certbot.sh)`
+ - [ldc](https://github.com/k-five/ldc) *Linux Docker Configuration*
      - `source <(curl -sL https://raw.githubusercontent.com/redcursor/btc/master/ldc/_comp_ldc.sh)`
 
