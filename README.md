@@ -51,7 +51,7 @@ if `progcomp` is not **on** turn it on;
 >>> shopt -s progcomp
 ```
 
-### Scripts 
+### Scripts and link for raw code
 
  - [clamscan](https://raw.githubusercontent.com/redcursor/btc/master/clamscan/_comp_clamscan.sh)
  - [nginx](https://raw.githubusercontent.com/redcursor/btc/master/nginx/_comp_nginx.sh)
@@ -59,3 +59,4 @@ if `progcomp` is not **on** turn it on;
  - [xargs](https://raw.githubusercontent.com/redcursor/btc/master/xargs/_comp_xargs.sh)
  - [curly](https://raw.githubusercontent.com/redcursor/btc/master/curly/_comp_curly.sh)
  - [certbot](https://raw.githubusercontent.com/redcursor/btc/master/certbot/_comp_certbot.sh)
+ - [ldc](https://raw.githubusercontent.com/redcursor/btc/master/ldc/_comp_ldc.sh)
