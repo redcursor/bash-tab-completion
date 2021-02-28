@@ -59,4 +59,6 @@ if `progcomp` is not **on** turn it on;
  - [xargs](https://raw.githubusercontent.com/redcursor/btc/master/xargs/_comp_xargs.sh)
  - [curly](https://raw.githubusercontent.com/redcursor/btc/master/curly/_comp_curly.sh)
  - [certbot](https://raw.githubusercontent.com/redcursor/btc/master/certbot/_comp_certbot.sh)
- - [ldc](https://raw.githubusercontent.com/redcursor/btc/master/ldc/_comp_ldc.sh)
+ - [ldc](https://github.com/k-five/ldc) **Linux Docker Configuration**
+     - `source <(curl -sL https://raw.githubusercontent.com/redcursor/btc/master/ldc/_comp_ldc.sh)`
+
